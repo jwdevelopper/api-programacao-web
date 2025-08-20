@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 //EXEMPLO: LISTAR, INSERIR, ATUALIZAR E EXCLUIR CLIENTES
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+
+    Cliente findByNome(String nome);
 }
