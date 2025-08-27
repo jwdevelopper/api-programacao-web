@@ -10,7 +10,7 @@ public class Cliente {
 
     //ANOTAÇÃO RESPONSAVEL POR CONFIGURAR O ID DA ENTIDADE
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     //DEMAIS ATRIBUTOS DA ENTIDADE
 
