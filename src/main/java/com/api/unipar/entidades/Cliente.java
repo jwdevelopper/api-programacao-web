@@ -10,11 +10,12 @@ public class Cliente {
 
     //ANOTAÇÃO RESPONSAVEL POR CONFIGURAR O ID DA ENTIDADE
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     //DEMAIS ATRIBUTOS DA ENTIDADE
 
     private String nome;
+
 
     //METODOS ACESSORES DA ENTIDADE
     public Long getId() {
@@ -23,6 +24,11 @@ public class Cliente {
 
     public void setId(Long id) {
         this.id = id;
+    }@Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Cliente)) return false;
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(id, cliente.id);
     }
 
     public String getNome() {
@@ -31,13 +37,6 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Cliente)) return false;
-        Cliente cliente = (Cliente) o;
-        return Objects.equals(id, cliente.id);
     }
 
     @Override
